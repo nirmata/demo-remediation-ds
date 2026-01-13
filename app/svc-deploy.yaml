@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-alpha-svc
+  namespace: sample-app
+spec:
+  type: ClusterIP
+  selector:
+    app: app-alpha
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
