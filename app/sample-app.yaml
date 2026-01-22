@@ -12,7 +12,7 @@ spec:
     metadata:
       labels:
         app: app-alpha
-        team: qa
+        team: test
     spec:
       containers:
       - name: app-alpha
