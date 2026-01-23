@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: app-alpha
   namespace: sample-app
-  type: demo
+  type: demo-new
 spec:
   replicas: 1
   selector:
