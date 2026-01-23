@@ -23,5 +23,4 @@ spec:
           mountPath: /host
       volumes:
       - name: host-volume
-        hostPath:
-          path: /etc
+        emptyDir: {}
