@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: app-alpha-svc
   namespace: sample-app
-  type: demo
+  type: demo-new
 spec:
   type: ClusterIP
   selector:
