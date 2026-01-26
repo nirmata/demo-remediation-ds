@@ -14,22 +14,17 @@ spec:
         app: app-alpha
         team: test
     spec:
-      securityContext:
-        runAsNonRoot: true
-        seccompProfile:
-          type: RuntimeDefault
       containers:
       - name: app-alpha
         image: busybox
         command: ["sleep", "3600"]
         securityContext:
           allowPrivilegeEscalation: false
-          runAsNonRoot: true
-          seccompProfile:
-            type: RuntimeDefault
           capabilities:
             drop:
             - ALL
+          seccompProfile:
+            type: RuntimeDefault
         volumeMounts:
         - name: host-volume
           mountPath: /host
