@@ -14,6 +14,8 @@ spec:
         app: app-alpha
         team: test
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
       - name: app-alpha
         image: busybox
