@@ -14,14 +14,22 @@ spec:
         app: app-alpha
         team: test
     spec:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
       containers:
       - name: app-alpha
         image: busybox
         command: ["sleep", "3600"]
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          seccompProfile:
+            type: RuntimeDefault
         volumeMounts:
         - name: host-volume
           mountPath: /host
       volumes:
       - name: host-volume
-        hostPath:
-          path: /etc
+        emptyDir: {}
