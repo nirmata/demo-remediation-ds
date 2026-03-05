@@ -1,0 +1,23 @@
+---
+apiVersion: "kyverno.io/v2beta1"
+kind: "PolicyException"
+metadata:
+  labels:
+    cleanup.kyverno.io/ttl: "2026-03-06T170531Z"
+  name: "per-demo-remediation-ds-pr35-t0vxzwla-0"
+  namespace: "kyverno"
+spec:
+  exceptions:
+  - policyName: "require-run-as-nonroot"
+    ruleNames:
+    - "autogen-run-as-non-root"
+    - "autogen-autogen-run-as-non-root"
+  match:
+    any:
+    - resources:
+        kinds:
+        - "Deployment"
+        names:
+        - "app-alpha"
+        namespaces:
+        - "sample-app"
